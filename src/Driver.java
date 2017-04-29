@@ -1,10 +1,10 @@
 /**
  * Created by jeppe on 2017-02-18.
  */
-import java.sql.*;
+
 public class Driver {
     public static void main(String args[]) {
-            dbParameters dbp=new dbParameters();
+            eventParameters dbp=new eventParameters();
 
             dbp.setUser("tcomkproj2017");
             dbp.setPassword("tcomkproj2017");
