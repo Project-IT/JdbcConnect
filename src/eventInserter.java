@@ -1,7 +1,7 @@
 import java.sql.*;
 
 /**
- * Created by jeppe on 2017-04-28.
+ * ConfluenceCreated by jeppe on 2017-04-28.
  */
 public class eventInserter {
     protected PreparedStatement ps=null;

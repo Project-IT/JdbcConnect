@@ -2,7 +2,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 /**
- * Created by jeppe on 2017-04-29.
+ * ConfluenceCreated by jeppe on 2017-04-29.
  */
 public abstract class dbParameters {
     protected String DbDriver="jdbc:mysql://";

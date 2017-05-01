@@ -1,7 +1,7 @@
 import java.sql.*;
 
 /**
- * Created by jeppe on 2017-04-28.
+ * ConfluenceCreated by jeppe on 2017-04-28.
  */
 public class eventParameters extends dbParameters{
     protected final String TABLENAME="confluence.ao_950dc3_tc_events";
