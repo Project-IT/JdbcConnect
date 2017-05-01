@@ -5,12 +5,10 @@ import java.sql.*;
  */
 public class eventInserter {
     protected PreparedStatement ps=null;
-    public void insert(eventParameters dbEventObject) {
+    public void insert(eventParameters dbEventObject, Connection myConn) {
         if (dbEventObject.verifyParameters()) {
             try {
-                    Connection myConn = DriverManager.getConnection(dbEventObject.getDbUrl(), dbEventObject.getUser(), dbEventObject.getPassword());
-                    //Statement myStm = myConn.createStatement();
-
+                    Statement myStm = myConn.createStatement();
                     ps = myConn.prepareStatement(dbEventObject.getInsertQuery());
                     ps.setString(1,  dbEventObject.getAll_day());
                     ps.setString(2,  dbEventObject.getCreated());
@@ -32,7 +30,6 @@ public class eventInserter {
                     ps.setString(18, dbEventObject.getVevent_uid());
                     System.out.println(ps.toString());
                     ps.executeUpdate();
-                    myConn.close();
                 } catch (Exception exc) {
                     exc.printStackTrace();
             }
