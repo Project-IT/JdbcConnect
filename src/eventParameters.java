@@ -3,7 +3,7 @@ import java.sql.*;
 /**
  * ConfluenceCreated by jeppe on 2017-04-28.
  */
-public class eventParameters extends dbParameters{
+public class eventParameters extends EventVerifier{
     protected final String TABLENAME="confluence.ao_950dc3_tc_events";
 
     protected String insertQuery="INSERT INTO " + TABLENAME +
@@ -31,24 +31,23 @@ public class eventParameters extends dbParameters{
     //defensive method to check the input. What do we need here?
     public boolean verifyParameters(){
         if(!verifyDbParameters())        return false;
-        if(all_day==null)                return false;
-        if(created==null)                return false;
-        if(description==null)            return false;
-        if(end==null)                    return false;
-        if(last_modified==null)          return false;
-        if(location==null)               return false;
-        if(organiser==null)              return false;
+        if(!verifyAll_day())             return false;
+        if(!verifyCreated())             return false;
+        if(!verifyDescription())         return false;
+        if(!verifyEnd())                 return false;
+        if(!verifyLast_modified())       return false;
+        if(!verifyLocation())            return false;
+        if(!verifyOrganiser())           return false;
         //if(recurrence_id_timestamp==1337)return false;
-        if(recurrence_rule==null)        return false;
-        if(reminder_setting_id==null)    return false;
-        if(sequence==null)               return false;
-        if(sub_calendar_id==null)        return false;
-        if(summary==null)                return false;
-        if(url==null)                    return false;
-        if(utc_end==null)                return false;
-        if(utc_start==null)              return false;
-        if(vevent_uid==null)             return false;
-
+        if(!verifyRecurrence_rule())     return false;
+        if(!verifyReminding_setting_id())return false;
+        if(!verifySequence())            return false;
+        if(!verifySub_calendar_id())     return false;
+        if(!verifySummary())             return false;
+        if(!verifyUrl())                 return false;
+        if(!verifyUtc_end())             return false;
+        if(!verifyUtc_start())           return false;
+        if(!verifyVevent_uid())          return false;
         return true;
     }
 
